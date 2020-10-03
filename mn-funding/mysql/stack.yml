@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      # Create db
+      MYSQL_DATABASE: mn-funding
+      # Use root/secret user/password credentials
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+# permanent storage of data.
+# > docker volume rm mysql_mn-funding-data-local
+volumes:
+  mn-funding-data-local:

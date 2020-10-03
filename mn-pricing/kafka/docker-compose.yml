@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  kafka-cluster:
+    image: lensesio/fast-data-dev:2.2
+    environment:
+      ADV_HOST: 127.0.0.1         # Change to 192.168.99.100 if using Docker Toolbox
+      RUNTESTS: 0                 # Disable Running tests so the cluster starts faster
+      FORWARDLOGS: 0              # No log forwarding to kafka topics
+      SAMPLEDATA: 0               # No sample data
+    ports:
+      - 2181:2181                 # Zookeeper
+      - 3030:3030                 # Lenses UI
+      - 8081-8083:8081-8083       # REST Proxy, Schema Registry, Kafka Connect
+      - 9581-9585:9581-9585       # JMX
+      - 9092:9092                 # Kafka Broker

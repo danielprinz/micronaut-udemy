@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.danielprinz.udemy
+testFramework: junit
+sourceLanguage: java
+buildTool: maven
+features: [ annotation-api, app-name, data, data-jdbc, docker, file-watch, http-client, java, java-application, jdbc-hikari, junit, liquibase, logback, maven, mysql, netty-server, readme, shade, testcontainers, yaml ]

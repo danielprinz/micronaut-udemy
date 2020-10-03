@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: postgres:12.4-alpine
+    environment:
+      # Create db
+      POSTGRES_DB: mn-stock-broker
+      # Use postgres/secret user/password credentials
+      POSTGRES_PASSWORD: secret
+      # enforce UTC timezone
+      TZ: UTC
+    volumes:
+      - mn-stock-broker-data-local:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  adminer:
+    image: adminer:4
+    ports:
+      - 8081:8080
+
+# permanent storage of data.
+# > docker volume rm postgres_mn-stock-broker-data-local
+volumes:
+  mn-stock-broker-data-local:

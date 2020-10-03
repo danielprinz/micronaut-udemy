@@ -1,0 +1,17 @@
+micronaut:
+  application:
+    name: mnFunding
+datasources:
+  default:
+    url: jdbc:mysql://localhost:3306/mn-funding
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: secret
+    schema-generate: NONE
+    dialect: MYSQL
+liquibase:
+  datasources:
+    default:
+      enabled: true
+      change-log: 'classpath:db/liquibase-changelog.xml'
+      drop-first: false

@@ -1,0 +1,5 @@
+micronaut:
+  application:
+    name: mnWebsockets
+  server:
+    port: 8180

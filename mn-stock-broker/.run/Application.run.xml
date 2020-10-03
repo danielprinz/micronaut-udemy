@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Application" type="Application" factoryName="Application" nameIsGenerated="true">
+    <envs>
+      <env name="PG_PASSWORD" value="secret" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.danielprinz.udemy.Application" />
+    <module name="mn-stock-broker" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.danielprinz.udemy.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
