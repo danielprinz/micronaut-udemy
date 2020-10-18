@@ -25,6 +25,8 @@ micronaut:
           secret:
             generator:
               secret: changeThisSecretToALongSecureString
+    # With that the static routes are available without auth
+    reject-not-found: false
 hello:
   controller:
     path: "/hello"
