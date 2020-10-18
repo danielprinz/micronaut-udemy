@@ -1,0 +1,1 @@
+GET http://localhost:8080/quotes/jpa/pagination?page=2&volume=10

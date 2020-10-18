@@ -1,21 +1,25 @@
 package com.danielprinz.udemy.broker;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
 import com.danielprinz.udemy.broker.model.CustomError;
 import com.danielprinz.udemy.broker.model.Quote;
 import com.danielprinz.udemy.broker.persistence.jpa.QuotesRepository;
+import com.danielprinz.udemy.broker.persistence.model.QuoteDTO;
 import com.danielprinz.udemy.broker.persistence.model.QuoteEntity;
 import com.danielprinz.udemy.broker.persistence.model.SymbolEntity;
 import com.danielprinz.udemy.broker.store.InMemoryStore;
 
+import io.micronaut.data.model.Pageable;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 import io.micronaut.http.annotation.PathVariable;
+import io.micronaut.http.annotation.QueryValue;
 import io.micronaut.security.annotation.Secured;
 import io.micronaut.security.rules.SecurityRule;
 import io.swagger.v3.oas.annotations.Operation;
@@ -81,5 +85,32 @@ public class QuotesController {
       return HttpResponse.notFound(notFound);
     }
     return HttpResponse.ok(maybeQuote.get());
+  }
+
+  @Get("/jpa/ordered/desc")
+  public List<QuoteDTO> orderedDesc() {
+    return quotes.listOrderByVolumeDesc();
+  }
+
+  @Get("/jpa/ordered/asc")
+  public List<QuoteDTO> orderedAsc() {
+    return quotes.listOrderByVolumeAsc();
+  }
+
+  @Get("/jpa/volume/{volume}")
+  public List<QuoteDTO> volumeFilter(@PathVariable BigDecimal volume) {
+    return quotes.findByVolumeGreaterThanOrderByVolumeAsc(volume);
+  }
+
+  @Get("/jpa/pagination{?page,volume}")
+  public List<QuoteDTO> volumeFilterPagination(@QueryValue Optional<Integer> page, @QueryValue Optional<BigDecimal> volume) {
+    var myPage = page.isEmpty() ? 0 : page.get();
+    BigDecimal myVolume = volume.isEmpty() ? BigDecimal.ZERO : volume.get();
+    return quotes.findByVolumeGreaterThan(myVolume, Pageable.from(myPage, 5));
+  }
+
+  @Get("/jpa/pagination/{page}")
+  public List<QuoteDTO> allWithPagination(@PathVariable int page) {
+    return quotes.list(Pageable.from(page, 5)).getContent();
   }
 }
