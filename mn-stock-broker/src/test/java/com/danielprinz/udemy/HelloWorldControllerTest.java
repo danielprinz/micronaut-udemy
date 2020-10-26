@@ -6,6 +6,10 @@ import javax.inject.Inject;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
@@ -14,6 +18,8 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest
 public class HelloWorldControllerTest {
+
+  private static final Logger LOG = LoggerFactory.getLogger(HelloWorldControllerTest.class);
 
   @Inject
   EmbeddedApplication application;
@@ -42,5 +48,11 @@ public class HelloWorldControllerTest {
   void returnsEnglishGreeting() {
     final String result = client.toBlocking().retrieve("/hello/en");
     assertEquals("Hello", result);
+  }
+
+  @Test
+  void returnsGreetingAsJson() {
+    final ObjectNode result = client.toBlocking().retrieve("/hello/json", ObjectNode.class);
+    LOG.debug(result.toString());
   }
 }

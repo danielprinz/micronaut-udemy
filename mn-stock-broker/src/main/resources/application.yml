@@ -62,3 +62,15 @@ jpa:
     properties:
       hibernate:
         show_sql: false
+# JSON Settings
+jackson:
+  # property-naming-strategy: SNAKE_CASE
+  serialization:
+    writeDatesAsTimestamps: false
+    writeDatesWithZoneId: true
+    writeDateTimestampsAsNanoseconds: false
+  deserialization:
+    failOnUnknownProperties: false
+  generator:
+    writeNumbersAsStrings: false
+    writeBigDecimalAsPlain: false
