@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.danielprinz.udemy
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ annotation-api, app-name, data, data-jpa, flyway, gradle, h2, http-client, java, java-application, jdbc-hikari, junit, logback, netty-server, readme, security-annotations, security-jwt, shade, yaml ]

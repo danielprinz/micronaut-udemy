@@ -1,0 +1,2 @@
+GET http://localhost:8080/secured/status
+Authorization: Bearer yourToken
