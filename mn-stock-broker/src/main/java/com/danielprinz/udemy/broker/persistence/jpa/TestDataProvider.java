@@ -41,7 +41,8 @@ public class TestDataProvider {
       LOG.info("Adding test data as empty database was found!!!");
       Stream.of("AAPL", "AMZN", "FB", "TSLA")
         .map(SymbolEntity::new)
-        .forEach(symbols::save);
+        .forEach(symbols::save)
+      ;
     }
     if (quotes.findAll().isEmpty()) {
       LOG.info("Adding test data as empty database was found!!!");

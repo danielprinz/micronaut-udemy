@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   db:
-    image: postgres:12.4-alpine
+    image: postgres:12.7-alpine
     environment:
       # Create db
       POSTGRES_DB: mn-stock-broker

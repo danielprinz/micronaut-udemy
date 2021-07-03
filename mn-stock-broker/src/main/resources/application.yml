@@ -24,7 +24,7 @@ micronaut:
         signatures:
           secret:
             generator:
-              secret: changeThisSecretToALongSecureString
+              secret: ${JWT_SECRET:changeThisSecretToALongSecureString}
     # With that the static routes are available without auth
     reject-not-found: false
 hello:
@@ -41,16 +41,13 @@ flyway:
     default:
       enabled: true
       clean-schema: false
-      url: ${PG_JDBC_URL:`jdbc:postgresql://127.0.0.1:5432/mn-stock-broker`}
-      user: ${PG_USERNAME:postgres}
-      password: ${PG_PASSWORD} # secret
       schemas: mn
       default-schema: mn
 datasources:
   default:
     url: ${PG_JDBC_URL:`jdbc:postgresql://127.0.0.1:5432/mn-stock-broker`}
     username: ${PG_USERNAME:postgres}
-    password: ${PG_PASSWORD} # secret
+    password: ${PG_PASSWORD:secret}
     driver-class-name: org.postgresql.Driver
     schema-genenerate: NONE
     dialect: POSTGRES

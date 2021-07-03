@@ -27,13 +27,10 @@ import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 import io.reactivex.Single;
 
 @MicronautTest
-public class WatchListControllerReactiveTest {
+class WatchListControllerReactiveTest {
 
   private static final Logger LOG = LoggerFactory.getLogger(WatchListControllerReactiveTest.class);
   private static final UUID TEST_ACCOUNT_ID = WatchListControllerReactive.ACCOUNT_ID;
-
-  @Inject
-  EmbeddedApplication application;
 
   @Inject
   @Client("/") JWTWatchListClient client;

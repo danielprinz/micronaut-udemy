@@ -17,10 +17,10 @@ import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest
-public class MarketsControllerTest {
+class MarketsControllerTest {
 
   @Inject
-  EmbeddedApplication application;
+  EmbeddedApplication<?> application;
 
   @Inject
   @Client("/") RxHttpClient client;

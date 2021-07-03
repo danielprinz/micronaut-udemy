@@ -1,14 +1,13 @@
 plugins {
-    id("com.github.johnrengelman.shadow") version "6.1.0"
-    id("io.micronaut.application") version "1.2.0"
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3"
 }
 
-version = "0.1"
+version = "1.0"
 group = "com.danielprinz.udemy"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
@@ -21,24 +20,20 @@ micronaut {
 }
 
 dependencies {
-    implementation("io.micronaut:micronaut-validation")
-    implementation("io.micronaut:micronaut-runtime")
-    implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-runtime")
     implementation("io.micronaut.elasticsearch:micronaut-elasticsearch")
+    implementation("javax.annotation:javax.annotation-api")
     implementation("com.github.javafaker:javafaker:1.0.2")
     runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-validation")
 }
 
 
 application {
     mainClass.set("com.danielprinz.udemy.Application")
 }
-
 java {
     sourceCompatibility = JavaVersion.toVersion("11")
     targetCompatibility = JavaVersion.toVersion("11")
 }
-
-
-

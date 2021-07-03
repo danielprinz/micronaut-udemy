@@ -17,12 +17,12 @@ import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest
-public class HelloWorldControllerTest {
+class HelloWorldControllerTest {
 
   private static final Logger LOG = LoggerFactory.getLogger(HelloWorldControllerTest.class);
 
   @Inject
-  EmbeddedApplication application;
+  EmbeddedApplication<?> application;
 
   @Inject
   @Client("/") RxHttpClient client;

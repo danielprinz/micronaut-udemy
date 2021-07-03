@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import javax.inject.Inject;
 
 @MicronautTest
-public class MnElasticSearchTest {
+class MnElasticSearchTest {
 
   @Inject
   EmbeddedApplication<?> application;

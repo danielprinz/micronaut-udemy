@@ -1,13 +1,13 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Application" type="MicronautRunConfigurationType" factoryName="Micronaut">
     <module name="mn-stock-broker" />
-    <option name="alternativeJrePath" />
-    <option name="alternativeJrePathEnabled" value="false" />
+    <option name="alternativeJrePath" value="corretto-11" />
+    <option name="alternativeJrePathEnabled" value="true" />
     <option name="includeProvidedScope" value="true" />
     <option name="mainClass" value="com.danielprinz.udemy.Application" />
     <option name="passParentEnvs" value="true" />
     <option name="programParameters" value="" />
-    <option name="shortenCommandLine" />
+    <option name="shortenCommandLine" value="NONE" />
     <option name="vmParameters" value="" />
     <option name="workingDirectory" value="" />
     <envs>
