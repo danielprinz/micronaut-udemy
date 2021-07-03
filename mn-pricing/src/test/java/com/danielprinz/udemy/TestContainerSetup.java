@@ -6,14 +6,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.utility.DockerImageName;
 
 @Testcontainers
-public class TestContainerSetup {
+class TestContainerSetup {
 
   private static final Logger LOG = LoggerFactory.getLogger(TestContainerSetup.class);
 
   @Rule
-  public KafkaContainer kafka = new KafkaContainer();
+  public KafkaContainer kafka = new KafkaContainer(DockerTestImages.KAFKA);
 
   @Test
   void setupWorks() {

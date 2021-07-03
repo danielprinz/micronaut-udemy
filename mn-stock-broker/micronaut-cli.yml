@@ -3,4 +3,4 @@ defaultPackage: com.danielprinz.udemy
 testFramework: junit
 sourceLanguage: java
 buildTool: maven
-features: [annotation-api, app-name, docker, file-watch, http-client, java, java-application, junit, logback, maven, netty-server, readme, shade, yaml]
+features: [annotation-api, app-name, docker, file-watch, http-client, java, java-application, junit, logback, maven, netty-server, readme, shade, testcontainers, yaml]

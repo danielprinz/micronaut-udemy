@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
+import com.danielprinz.udemy.DockerTestImages;
 import org.awaitility.Awaitility;
 import org.junit.Rule;
 import org.junit.jupiter.api.AfterAll;
@@ -31,14 +32,14 @@ import io.micronaut.core.util.CollectionUtils;
 import io.micronaut.core.util.StringUtils;
 
 @Testcontainers
-public class TestExternalQuoteConsumer {
+class TestExternalQuoteConsumer {
 
   private static final Logger LOG = LoggerFactory.getLogger(TestExternalQuoteConsumer.class);
   private static final String PROPERTY_NAME = "TestExternalQuoteConsumer";
   public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
 
   @Rule
-  public static KafkaContainer kafka = new KafkaContainer();
+  public static KafkaContainer kafka = new KafkaContainer(DockerTestImages.KAFKA);
 
   private static ApplicationContext context;
 

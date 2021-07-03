@@ -2,7 +2,7 @@ version: '3'
 
 services:
   kafka-cluster:
-    image: lensesio/fast-data-dev:2.2
+    image: lensesio/fast-data-dev:2.6.2-L0
     environment:
       ADV_HOST: 127.0.0.1         # Change to 192.168.99.100 if using Docker Toolbox
       RUNTESTS: 0                 # Disable Running tests so the cluster starts faster

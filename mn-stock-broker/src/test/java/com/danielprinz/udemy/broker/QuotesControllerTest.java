@@ -29,12 +29,12 @@ import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest
-public class QuotesControllerTest {
+class QuotesControllerTest {
 
   private static final Logger LOG = LoggerFactory.getLogger(QuotesControllerTest.class);
 
   @Inject
-  EmbeddedApplication application;
+  EmbeddedApplication<?> application;
 
   @Inject
   @Client("/") RxHttpClient client;
@@ -51,11 +51,11 @@ public class QuotesControllerTest {
 
     final Quote appleResult = client.toBlocking().retrieve(GET("/quotes/APPL"), Quote.class);
     LOG.info("Result: {}", appleResult);
-    assertThat(apple).isEqualToComparingFieldByField(appleResult);
+    assertThat(apple).usingRecursiveComparison().isEqualTo(appleResult);
 
     final Quote amazonResult = client.toBlocking().retrieve(GET("/quotes/AMZN"), Quote.class);
     LOG.info("Result: {}", amazonResult);
-    assertThat(amazon).isEqualToComparingFieldByField(amazonResult);
+    assertThat(amazon).usingRecursiveComparison().isEqualTo(amazonResult);
   }
 
   @Test

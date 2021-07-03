@@ -31,14 +31,11 @@ import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest
-public class WatchListControllerTest {
+class WatchListControllerTest {
 
   private static final Logger LOG = LoggerFactory.getLogger(WatchListControllerTest.class);
   private static final UUID TEST_ACCOUNT_ID = WatchListController.ACCOUNT_ID;
   public static final String ACCOUNT_WATCHLIST = "/account/watchlist";
-
-  @Inject
-  EmbeddedApplication application;
 
   @Inject
   @Client("/") RxHttpClient client;

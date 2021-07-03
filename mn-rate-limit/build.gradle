@@ -1,22 +1,21 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "6.0.0"
-    id "io.micronaut.application" version '1.0.3'
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3"
 }
 
-version "0.1"
+version "1.0"
 group "com.danielprinz.udemy"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
-    runtime "netty"
-    testRuntime "junit5"
+    runtime("netty")
+    testRuntime("junit5")
     processing {
-        incremental true
-        annotations "com.danielprinz.udemy.*"
+        incremental(true)
+        annotations("com.danielprinz.udemy.*")
     }
 }
 
@@ -29,10 +28,12 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
 }
 
-mainClassName = "com.danielprinz.udemy.Application"
+application {
+    mainClass.set("com.danielprinz.udemy.Application")
+}
 java {
-    sourceCompatibility = JavaVersion.toVersion('11')
-    targetCompatibility = JavaVersion.toVersion('11')
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
 }
 
 

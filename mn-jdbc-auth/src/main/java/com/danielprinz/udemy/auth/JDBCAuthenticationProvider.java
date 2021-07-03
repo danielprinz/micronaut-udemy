@@ -4,9 +4,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Optional;
 
-import javax.annotation.Nullable;
 import javax.inject.Singleton;
 
+import io.micronaut.core.annotation.Nullable;
 import org.reactivestreams.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

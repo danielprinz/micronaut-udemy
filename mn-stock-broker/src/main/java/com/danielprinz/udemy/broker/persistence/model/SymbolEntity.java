@@ -1,8 +1,6 @@
 package com.danielprinz.udemy.broker.persistence.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +14,12 @@ import lombok.NoArgsConstructor;
 public class SymbolEntity {
 
   @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Integer id;
+
   private String value;
 
+  public SymbolEntity(String value) {
+    this.value = value;
+  }
 }

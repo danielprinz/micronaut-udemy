@@ -22,7 +22,7 @@ public class QuoteEntity {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
   @ManyToOne(targetEntity = SymbolEntity.class)
-  @JoinColumn(name = "symbol", referencedColumnName = "value")
+  @JoinColumn(name = "symbol", referencedColumnName = "id")
   private SymbolEntity symbol;
   private BigDecimal bid;
   private BigDecimal ask;

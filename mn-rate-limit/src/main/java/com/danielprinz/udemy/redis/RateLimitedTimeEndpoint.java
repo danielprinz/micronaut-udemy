@@ -16,8 +16,8 @@ import io.micronaut.scheduling.annotation.ExecuteOn;
 @Controller("/time")
 public class RateLimitedTimeEndpoint {
 
+  protected static final int QUOTA_PER_MINUTE = 10;
   private static final Logger LOG = LoggerFactory.getLogger(RateLimitedTimeEndpoint.class);
-  private static final int QUOTA_PER_MINUTE = 10;
   private final StatefulRedisConnection<String, String> redis;
 
   public RateLimitedTimeEndpoint(final StatefulRedisConnection<String, String> redis) {

@@ -1,28 +1,27 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "6.0.0"
-    id "io.micronaut.application" version '1.0.5'
+    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("io.micronaut.application") version "1.5.3"
 }
 
-version "0.1"
+version "1.0"
 group "com.danielprinz.udemy"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
-    runtime "netty"
-    testRuntime "junit5"
+    runtime("netty")
+    testRuntime("junit5")
     processing {
-        incremental true
-        annotations "com.danielprinz.udemy.*"
+        incremental(true)
+        annotations("com.danielprinz.udemy.*")
     }
 }
 
 dependencies {
-    compileOnly("org.projectlombok:lombok:1.18.12")
-    annotationProcessor("org.projectlombok:lombok:1.18.12")
+    compileOnly("org.projectlombok:lombok")
+    annotationProcessor("org.projectlombok:lombok")
     annotationProcessor("io.micronaut.data:micronaut-data-processor")
     annotationProcessor("io.micronaut.security:micronaut-security-annotations")
     implementation("io.micronaut:micronaut-validation")
@@ -36,12 +35,10 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 }
 
-mainClassName = "com.danielprinz.udemy.Application"
-java {
-    sourceCompatibility = JavaVersion.toVersion('11')
-    targetCompatibility = JavaVersion.toVersion('11')
+application {
+    mainClass.set("com.danielprinz.udemy.Application")
 }
-
-
-
-
+java {
+    sourceCompatibility = JavaVersion.toVersion("11")
+    targetCompatibility = JavaVersion.toVersion("11")
+}
