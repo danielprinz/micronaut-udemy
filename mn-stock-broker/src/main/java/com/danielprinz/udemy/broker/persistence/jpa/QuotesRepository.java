@@ -19,7 +19,7 @@ public interface QuotesRepository extends CrudRepository<QuoteEntity, Integer> {
   @Override
   List<QuoteEntity> findAll();
 
-  Optional<QuoteEntity> findBySymbol(SymbolEntity entity);
+  Optional<QuoteEntity> findBySymbolValue(String entity);
 
   // Ordering
   List<QuoteDTO> listOrderByVolumeDesc();

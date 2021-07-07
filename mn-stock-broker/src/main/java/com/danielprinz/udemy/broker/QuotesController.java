@@ -74,7 +74,7 @@ public class QuotesController {
   @Tag(name = "quotes")
   @Get("/{symbol}/jpa")
   public HttpResponse getQuoteViaJPA(@PathVariable String symbol) {
-    final Optional<QuoteEntity> maybeQuote = quotes.findBySymbol(new SymbolEntity(symbol));
+    final Optional<QuoteEntity> maybeQuote = quotes.findBySymbolValue(symbol);
     if (maybeQuote.isEmpty()) {
       final CustomError notFound = CustomError.builder()
         .status(HttpStatus.NOT_FOUND.getCode())
@@ -103,7 +103,8 @@ public class QuotesController {
   }
 
   @Get("/jpa/pagination{?page,volume}")
-  public List<QuoteDTO> volumeFilterPagination(@QueryValue Optional<Integer> page, @QueryValue Optional<BigDecimal> volume) {
+  public List<QuoteDTO> volumeFilterPagination(@QueryValue Optional<Integer> page,
+                                               @QueryValue Optional<BigDecimal> volume) {
     var myPage = page.isEmpty() ? 0 : page.get();
     BigDecimal myVolume = volume.isEmpty() ? BigDecimal.ZERO : volume.get();
     return quotes.findByVolumeGreaterThan(myVolume, Pageable.from(myPage, 5));
