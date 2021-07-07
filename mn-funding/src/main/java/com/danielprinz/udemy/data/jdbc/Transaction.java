@@ -21,12 +21,23 @@ public class Transaction {
     this.modification = modification;
   }
 
-  public Transaction(final long transactionId, final String user, final String symbol,
-      final BigDecimal modification) {
+  public Transaction(long transactionId, String user, String symbol, BigDecimal modification) {
     this.transactionId = transactionId;
     this.user = user;
     this.symbol = symbol;
     this.modification = modification;
+  }
+
+  public long getTransactionId() {
+    return transactionId;
+  }
+
+  public void setTransactionId(long transactionId) {
+    this.transactionId = transactionId;
+  }
+
+  public String getUser() {
+    return user;
   }
 
   public String getSymbol() {
@@ -35,14 +46,6 @@ public class Transaction {
 
   public BigDecimal getModification() {
     return modification;
-  }
-
-  public long getTransactionId() {
-    return transactionId;
-  }
-
-  public String getUser() {
-    return user;
   }
 
   @Override
