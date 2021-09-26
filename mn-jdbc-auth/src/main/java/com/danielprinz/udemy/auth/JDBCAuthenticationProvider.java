@@ -4,9 +4,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Optional;
 
-import javax.inject.Singleton;
-
 import io.micronaut.core.annotation.Nullable;
+import jakarta.inject.Singleton;
 import org.reactivestreams.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +19,6 @@ import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
 import io.micronaut.security.authentication.AuthenticationRequest;
 import io.micronaut.security.authentication.AuthenticationResponse;
-import io.micronaut.security.authentication.UserDetails;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 
@@ -52,7 +50,7 @@ public class JDBCAuthenticationProvider implements AuthenticationProvider {
           final HashMap<String, Object> attributes = new HashMap<>();
           attributes.put("hair_color", "brown");
           attributes.put("language", "en");
-          final UserDetails userDetails = new UserDetails(
+          var userDetails = AuthenticationResponse.success(
               identity,
               Collections.singletonList("ROLE_USER"),
               attributes

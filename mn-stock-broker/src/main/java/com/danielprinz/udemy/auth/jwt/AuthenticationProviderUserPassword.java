@@ -2,20 +2,18 @@ package com.danielprinz.udemy.auth.jwt;
 
 import java.util.ArrayList;
 
-import javax.annotation.Nullable;
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 import org.reactivestreams.Publisher;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import io.micronaut.core.annotation.Nullable;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.security.authentication.AuthenticationException;
 import io.micronaut.security.authentication.AuthenticationFailed;
 import io.micronaut.security.authentication.AuthenticationProvider;
 import io.micronaut.security.authentication.AuthenticationRequest;
 import io.micronaut.security.authentication.AuthenticationResponse;
-import io.micronaut.security.authentication.UserDetails;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 
@@ -36,7 +34,7 @@ public class AuthenticationProviderUserPassword implements AuthenticationProvide
       if (identity.equals("my-user") && secret.equals("secret")) {
         // pass
         LOG.debug("User logged in.");
-        emitter.onNext(new UserDetails((String) identity, new ArrayList<>()));
+        emitter.onNext(AuthenticationResponse.success((String) identity, new ArrayList<>()));
         emitter.onComplete();
         return;
       }

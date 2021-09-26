@@ -1,4 +1,4 @@
-FROM oracle/graalvm-ce:20.2.0-java11 as graalvm
+FROM ghcr.io/graalvm/graalvm-ce:java11-21 as graalvm
 RUN gu install native-image
 
 COPY . /home/app/mn-pricing

@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.time.Duration;
 
-import javax.inject.Inject;
+import io.micronaut.rxjava2.http.client.websockets.RxWebSocketClient;
+import jakarta.inject.Inject;
 
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,10 +15,9 @@ import org.slf4j.LoggerFactory;
 
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
-import io.micronaut.websocket.RxWebSocketClient;
 
 @MicronautTest
-public class SimpleWebSocketServerTest {
+class SimpleWebSocketServerTest {
 
   private static final Logger LOG = LoggerFactory.getLogger(SimpleWebSocketServerTest.class);
 

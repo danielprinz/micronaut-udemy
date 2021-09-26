@@ -3,7 +3,7 @@ package com.danielprinz.udemy;
 import java.util.HashMap;
 import java.util.UUID;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 import org.elasticsearch.action.ActionListener;
 import org.elasticsearch.action.index.IndexRequest;

@@ -8,7 +8,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -22,10 +22,10 @@ import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpResponse;
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.MediaType;
-import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.EmbeddedApplication;
+import io.micronaut.rxjava2.http.client.RxHttpClient;
 import io.micronaut.security.authentication.UsernamePasswordCredentials;
 import io.micronaut.security.token.jwt.render.BearerAccessRefreshToken;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -103,7 +103,7 @@ class WatchListControllerTest {
       .accept(MediaType.APPLICATION_JSON)
       .bearerAuth(token.getAccessToken());
 
-    final WatchList result = client.toBlocking().retrieve(request, WatchList.class);
+    final WatchList result = client.toBlocking().exchange(request, WatchList.class).body();
     assertEquals(3, result.getSymbols().size());
     assertEquals(3, store.getWatchList(TEST_ACCOUNT_ID).getSymbols().size());
   }
