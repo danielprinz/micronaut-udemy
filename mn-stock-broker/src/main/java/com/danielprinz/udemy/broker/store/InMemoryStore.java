@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 import com.danielprinz.udemy.broker.model.Quote;
 import com.danielprinz.udemy.broker.model.Symbol;

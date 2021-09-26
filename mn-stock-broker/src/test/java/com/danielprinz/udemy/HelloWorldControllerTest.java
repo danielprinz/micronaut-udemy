@@ -2,7 +2,7 @@ package com.danielprinz.udemy;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,9 +11,9 @@ import org.slf4j.LoggerFactory;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.runtime.EmbeddedApplication;
+import io.micronaut.rxjava2.http.client.RxHttpClient;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest

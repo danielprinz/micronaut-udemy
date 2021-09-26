@@ -10,15 +10,15 @@
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>2.5.7</version>
+    <version>3.0.1</version>
   </parent>
 
   <properties>
     <packaging>jar</packaging>
     <jdk.version>11</jdk.version>
     <release.version>11</release.version>
-    <micronaut.version>2.5.7</micronaut.version>
-    <micronaut.data.version>2.4.4</micronaut.data.version>
+    <micronaut.version>3.0.1</micronaut.version>
+    <micronaut.data.version>3.0.1</micronaut.data.version>
     <exec.mainClass>com.danielprinz.udemy.Application</exec.mainClass>
     <micronaut.runtime>netty</micronaut.runtime>
   </properties>
@@ -90,11 +90,6 @@
     <dependency>
       <groupId>io.micronaut.sql</groupId>
       <artifactId>micronaut-jdbc-hikari</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
       <scope>compile</scope>
     </dependency>
     <dependency>

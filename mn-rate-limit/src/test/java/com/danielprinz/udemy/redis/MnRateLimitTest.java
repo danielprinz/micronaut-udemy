@@ -1,7 +1,6 @@
 package com.danielprinz.udemy.redis;
 
-import com.danielprinz.udemy.redis.RateLimitedTimeEndpoint;
-import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.runtime.EmbeddedApplication;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
@@ -11,7 +10,7 @@ import org.junit.jupiter.api.Assertions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import java.util.stream.IntStream;
 
@@ -27,7 +26,7 @@ class MnRateLimitTest {
 
   @Inject
   @Client("/time")
-  RxHttpClient client;
+  HttpClient client;
 
   @Test
   void testItWorks() {

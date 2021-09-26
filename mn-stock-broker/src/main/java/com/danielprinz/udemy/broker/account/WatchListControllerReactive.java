@@ -3,7 +3,7 @@ package com.danielprinz.udemy.broker.account;
 import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 
-import javax.inject.Named;
+import jakarta.inject.Named;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

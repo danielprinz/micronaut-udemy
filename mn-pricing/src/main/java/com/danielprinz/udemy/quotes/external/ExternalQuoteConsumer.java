@@ -37,8 +37,8 @@ public class ExternalQuoteConsumer {
     ).collect(Collectors.toList());
     priceUpdateProducer.send(priceUpdates
     ).doOnError(e -> LOG.error("Failed to produce:", e.getCause())
-    ).forEach(recordMetadata -> {
-      LOG.debug("Record sent to topic {} on offset {}", recordMetadata.topic(), recordMetadata.offset());
-    });
+    ).doOnNext(recordMetadata ->
+      LOG.debug("Record sent to topic {} on offset {}", recordMetadata.topic(), recordMetadata.offset())
+    ).subscribe();
   }
 }

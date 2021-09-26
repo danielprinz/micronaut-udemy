@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
@@ -22,10 +22,10 @@ import com.danielprinz.udemy.broker.store.InMemoryStore;
 
 import io.micronaut.core.type.Argument;
 import io.micronaut.http.HttpStatus;
-import io.micronaut.http.client.RxHttpClient;
 import io.micronaut.http.client.annotation.Client;
 import io.micronaut.http.client.exceptions.HttpClientResponseException;
 import io.micronaut.runtime.EmbeddedApplication;
+import io.micronaut.rxjava2.http.client.RxHttpClient;
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest;
 
 @MicronautTest

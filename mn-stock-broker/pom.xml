@@ -10,16 +10,16 @@
   <parent>
     <groupId>io.micronaut</groupId>
     <artifactId>micronaut-parent</artifactId>
-    <version>2.5.7</version>
+    <version>3.0.1</version>
   </parent>
 
   <properties>
     <packaging>jar</packaging>
     <jdk.version>11</jdk.version>
     <release.version>${jdk.version}</release.version>
-    <micronaut.version>2.5.7</micronaut.version>
+    <micronaut.version>3.0.1</micronaut.version>
+    <micronaut.data.version>3.0.1</micronaut.data.version>
     <exec.mainClass>com.danielprinz.udemy.Application</exec.mainClass>
-    <micronaut.data.version>2.4.4</micronaut.data.version>
     <micronaut.runtime>netty</micronaut.runtime>
   </properties>
 
@@ -40,6 +40,14 @@
       <groupId>io.micronaut</groupId>
       <artifactId>micronaut-validation</artifactId>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.rxjava2</groupId>
+      <artifactId>micronaut-rxjava2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.micronaut.rxjava2</groupId>
+      <artifactId>micronaut-rxjava2-http-client</artifactId>
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>

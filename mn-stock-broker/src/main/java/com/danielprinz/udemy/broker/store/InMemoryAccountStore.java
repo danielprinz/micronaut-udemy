@@ -3,7 +3,7 @@ package com.danielprinz.udemy.broker.store;
 import java.util.HashMap;
 import java.util.UUID;
 
-import javax.inject.Singleton;
+import jakarta.inject.Singleton;
 
 import com.danielprinz.udemy.broker.model.WatchList;
 

@@ -11,9 +11,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import io.micronaut.core.annotation.Introspected;
 import lombok.Data;
 
 @Entity(name = "quote")
+@Introspected
 @Table(name = "quotes", schema = "mn")
 @Data
 public class QuoteEntity {
