@@ -26,7 +26,6 @@ dependencies {
     implementation("javax.annotation:javax.annotation-api")
     implementation("io.micronaut.reactor:micronaut-reactor")
     runtimeOnly("ch.qos.logback:logback-classic")
-    testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:testcontainers")
     testImplementation("org.testcontainers:junit-jupiter")
     testImplementation("org.testcontainers:kafka")
