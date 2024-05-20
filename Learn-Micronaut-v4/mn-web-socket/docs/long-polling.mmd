@@ -1,0 +1,10 @@
+---
+title: Long Polling
+config:
+  theme: neutral
+---
+sequenceDiagram
+    Client->>+Server: Request
+    Server->>-Client: Timeout
+    Client->>+Server: Request
+    Server->>-Client: Response: 200 (Ok)

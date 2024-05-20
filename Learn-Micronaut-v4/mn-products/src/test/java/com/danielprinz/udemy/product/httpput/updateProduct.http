@@ -1,0 +1,7 @@
+PUT http://localhost:8080/admin/products/1
+Content-Type: application/json
+
+{
+  "name": "black tea",
+  "type": "TEA"
+}
