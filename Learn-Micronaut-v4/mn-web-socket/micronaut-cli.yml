@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: com.danielprinz.udemy
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle_kotlin
+features: [ app-name, gradle, http-client-test, java, java-application, junit, logback, micronaut-aot, micronaut-build, micronaut-http-validation, netty-server, readme, serialization-jackson, shade, websocket, yaml, yaml-build ]

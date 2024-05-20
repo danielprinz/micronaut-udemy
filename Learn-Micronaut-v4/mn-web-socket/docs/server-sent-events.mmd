@@ -1,0 +1,11 @@
+---
+title: Server Sent Events
+config:
+  theme: neutral
+---
+sequenceDiagram
+    Client->>Server: Connection Request
+    Server->>Client: Connection Response
+    Client->>Server: Event
+    Client->>Server: Event
+    Server->>Client: Connection closed

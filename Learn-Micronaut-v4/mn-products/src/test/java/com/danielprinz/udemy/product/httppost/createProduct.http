@@ -1,0 +1,8 @@
+POST http://localhost:8080/admin/products
+Content-Type: application/json
+
+{
+  "id": 999,
+  "name": "green tea",
+  "type": "TEA"
+}

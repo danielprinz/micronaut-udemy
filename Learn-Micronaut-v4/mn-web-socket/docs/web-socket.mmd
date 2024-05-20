@@ -1,0 +1,11 @@
+---
+title: Web Socket
+config:
+  theme: neutral
+---
+sequenceDiagram
+    Client->>Server: Handshake
+    Server->>Client: Handshake
+    Server->>Client: Send Message
+    Client->>Server: Send Message
+    Client->>Server: Terminate
