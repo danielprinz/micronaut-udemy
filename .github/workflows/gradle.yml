@@ -45,3 +45,7 @@ jobs:
     - name: Build mn-web-socket
       run: gradle clean build
       working-directory: ./Learn-Micronaut-v4/mn-web-socket
+    
+    - name: Build mn-rate-limit
+      run: gradle clean build
+      working-directory: ./Learn-Micronaut-v4/mn-rate-limit

@@ -1,0 +1,11 @@
+micronaut:
+  application:
+    name: mn-rate-limit
+redis:
+  # uri: ${REDIS_URI:`redis://localhost`}
+  ssl: false
+  timeout: 30s
+test-resources:
+  containers:
+    redis:
+      image-name: redis:7-alpine
