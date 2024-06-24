@@ -1,0 +1,8 @@
+micronaut:
+  application:
+    name: mn-redis-cache
+redis:
+  uri: ${REDIS_URI:`redis://localhost`}
+  caches:
+    headlines:
+      expire-after-write: 30s
