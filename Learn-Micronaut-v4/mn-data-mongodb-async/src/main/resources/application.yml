@@ -1,0 +1,10 @@
+micronaut:
+  application:
+    name: mn-data-mongodb-async
+  #mongodb:
+  # uri: ${MONGODB_URI:`mongodb://localhost:27017/jokes`}
+test-resources:
+  containers:
+    mongodb:
+      image-name: mongo:7-jammy
+      db-name: jokes
